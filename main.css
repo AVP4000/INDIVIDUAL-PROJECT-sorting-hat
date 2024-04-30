@@ -1,3 +1,29 @@
 body {
-    background-color: blueviolet;
+    background-color:darkolivegreen;
+}
+
+#initialCard {
+    background-color: slategrey;
+    color: azure;
+}
+
+#studentForm {
+margin: auto;
+width: fit-content;
+}
+
+.houseButtons-c {
+display: flex;
+justify-content: center;
+margin-top: 60px;
+}
+
+#allb,
+#gryffB,
+#hufflB,
+#ravenB,
+#slythB {
+  margin-right: 10px;
+  margin-left: 10px;
+  color: white;
 }
