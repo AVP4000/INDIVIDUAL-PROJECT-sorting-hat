@@ -4,7 +4,8 @@ body {
 
 #initialCard {
     background-color: slategrey;
-    color: azure;
+    color: lightgoldenrodyellow;
+    
 }
 
 #studentForm {
@@ -25,5 +26,12 @@ margin-top: 60px;
 #slythB {
   margin-right: 10px;
   margin-left: 10px;
-  color: white;
+  color: black;
+}
+
+.hat {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100px;
 }
