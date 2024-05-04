@@ -65,7 +65,7 @@ const renderToDom = (divId, htmlToRender) => {
         <div class="card-body">
           <h5 class="card-title">${student.name}</h5>
           <p class="card-text">House: ${student.house}</p>
-          <a href="#" class="btn btn-danger" id="delete--${student.id}">Expel</a>
+          <a href="#" class="btn btn-danger" id="expel--${student.id}">Expel</a>
         </div>
       </div>
     </div>
@@ -75,10 +75,8 @@ const renderToDom = (divId, htmlToRender) => {
   };
   
 
-
-
 // intro, student form, enrolled vs expelled student
-const introBtn = document.querySelector("#introB");
+// const introBtn = document.querySelector("#introB");
 const form = document.querySelector('form');
 const enrolledStudents = document.querySelector("#enrolledStudents");
 const expelledStudents = document.querySelector("#expelledStudents");
@@ -109,20 +107,6 @@ form.reset();
 
 form.addEventListener('submit', createNewStudent);
 
-//FILTER HOUSE
-//   const filter = (array, houseString) => {
-//     let newHouseArray = [];
-  
-//     for (const students of array) {
-//       if (students.house === houseString) {
-//         newHouseArray.push(students);
-//       }
-//     }
-//     console.log(newHouseArray);
-  
-//     cardsOnDom(newHouseArray);
-//     console.log(cardsOnDom(newHouseArray));
-//   };
 
 // create const "houseFilter" WORKING
 const houseFilter = (array, house) => {
@@ -136,24 +120,52 @@ for(const stu of array) {
   return stuArray; // Returns filtered array of students by house
 };
 
-// Expel Array  NOT WORKING
-const expel = (array) => {
-    let = domString = "";
-    for (expelledStudents of array) {
-        domString += `<div class="card mb-3" style="max-width: 540px;">
-      <div class="row g-0">
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">${expelledStudents.name}</h5>
-            <p class="card-text">House: ${expelledStudents.house}</p>
-          </div>
-        </div>
-      </div>
-    </div>`;
-      }
-      console.log(student);
-      expelledStudents.innerHTML = domString;
-    };  
+//Create ExpelledDom
+const renderToExpelledDom = (array) => {
+let expelledStudentsDomString = "";
+array.forEach((expelledStudent) => { 
+    expelledStudentsDomString +=
+    `<div>
+     <div class="card" style="width: 18rem;">
+     <img src="https://vignette.wikia.nocookie.net/villains/images/3/39/Hp-maab21252.jpg/revision/latest?cb=20180504040442" class="card-img-top" alt="...">
+     <div class="card-body">
+       <p class="card text-center">The Darkness Claims Another <b>${expelledStudent.name}</b> WANTED DEAD OR ALIVE</p>
+     </div>
+   </div>
+     </div>`
+});
+renderToDom('#expelledStudents', expelledStudentsDomString);
+   };
+
+// Expel Array  NOT WORKING - CAN DELETE
+// Here we will be using event bubbling
+// 1. Target the app div if it already hasnt been done: const app = document.querySelector("#app");
+// 2. Add an event listener to capture clicks
+
+enrolledStudents.addEventListener('click', (e) => {
+    // console.log(e.target.id);
+    
+  // 3. check e.target.id includes "expel"
+    if (e.target.id.includes("expel")) {
+      // destructuring: https://github.com/orgs/nss-evening-web-development/discussions/11
+      const [, studentId] = e.target.id.split("--");
+  
+  // 4. add logic to remove from array
+  // .findIndex is an array method
+  const index = students.findIndex((student) => Number(studentId) === student.id);
+  
+      // .splice modifies the original array
+  
+  // 5. Repaint the DOMs with the updated array
+  const expelledStudent = students.splice(index, 1);
+  expelledS.push(expelledStudent[0]);
+      cardsOnDom(students);
+
+    //   expelledS.push(...students.splice(index, 1));
+    
+      renderToExpelledDom(expelledS); 
+    }
+  });
 
 
 // filters to target "houseFilter"

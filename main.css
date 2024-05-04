@@ -1,6 +1,10 @@
 body {
-    background-color:darkolivegreen;
+    background-image: url("Assets/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
 
 #initialCard {
     width: 80%;
@@ -10,10 +14,19 @@ body {
     color: lightgoldenrodyellow;
 }
 
-#studentForm {
+#expelledCard {
+    width: 80%;
+    margin: 50px auto 20px auto;
+    padding: 20px 40px;
+    background-color: rgb(3, 41, 3);
+    color: lightgoldenrodyellow;
+}
+
+
+/* #studentForm {
 margin: auto;
 width: fit-content;
-}
+} */
 
 form {
     width: 40%;
@@ -22,10 +35,17 @@ form {
     background-color: whitesmoke;
   }
 
+h3 {
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 1px 1px 2px black;
+}
+
 .houseButtons-c {
 display: flex;
 justify-content: center;
 margin-top: 60px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 #allb,
@@ -44,3 +64,4 @@ margin-top: 60px;
     background-position: center center;
     height: 100px;
 }
+
