@@ -13,6 +13,13 @@ margin: auto;
 width: fit-content;
 }
 
+form {
+    width: 40%;
+    margin: 50px auto 20px auto;
+    padding: 20px 40px;
+    background-color: whitesmoke;
+  }
+
 .houseButtons-c {
 display: flex;
 justify-content: center;
