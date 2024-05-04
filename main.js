@@ -46,7 +46,7 @@ const students = [
     
   ];
 
-  const expelledStudents = [];
+  const expelledS = [];
 
 // Need to renderToDom and cardsOnDom
 
@@ -75,17 +75,7 @@ const renderToDom = (divId, htmlToRender) => {
   };
   
 
-// create const "houseFilter"
-const houseFilter = (array, house) => {
-    //console.log('heres house: ', house)
-const stuArray=[]
-for(const stu of array) {
-    if (stu.house === house) {
-      stuArray.push(stu);
-    }
-  }
-  return stuArray; // Returns filtered array of students by house
-};
+
 
 // intro, student form, enrolled vs expelled student
 const introBtn = document.querySelector("#introB");
@@ -106,35 +96,47 @@ const createNewStudent = (e) => {
     
     const newStudentObj = {
       id: students.length + 1,
-      name: document.querySelector('#new-student').value,
-      house: houses[randomHouse]   
-    }};
+      name: document.querySelector("#new-student").value,
+      house: randomize(), 
+    }
     
 students.push(newStudentObj);
 cardsOnDom(students);
 
 // form reset
 form.reset();
+}
 
-form.addEventListener("submit", createNewStudent);
+form.addEventListener('submit', createNewStudent);
 
 //FILTER HOUSE
-  const filter = (array, houseString) => {
-    let newHouseArray = [];
+//   const filter = (array, houseString) => {
+//     let newHouseArray = [];
   
-    for (const students of array) {
-      if (students.house === houseString) {
-        newHouseArray.push(students);
-      }
+//     for (const students of array) {
+//       if (students.house === houseString) {
+//         newHouseArray.push(students);
+//       }
+//     }
+//     console.log(newHouseArray);
+  
+//     cardsOnDom(newHouseArray);
+//     console.log(cardsOnDom(newHouseArray));
+//   };
+
+// create const "houseFilter" WORKING
+const houseFilter = (array, house) => {
+    //console.log('heres house: ', house)
+const stuArray=[]
+for(const stu of array) {
+    if (stu.house === house) {
+      stuArray.push(stu);
     }
-    console.log(newHouseArray);
-  
-    cardsOnDom(newHouseArray);
-    console.log(cardsOnDom(newHouseArray));
-  };
+  }
+  return stuArray; // Returns filtered array of students by house
+};
 
-
-// Expel Array  
+// Expel Array  NOT WORKING
 const expel = (array) => {
     let = domString = "";
     for (expelledStudents of array) {
