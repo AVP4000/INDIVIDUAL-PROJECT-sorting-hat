@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 </head>
-<body>
+<body class="container">
 <!--STEPS-->    
 <!--1. Use a bootstrap card to have your sorting hat introduce itself and start the sorting process
 (by clicking on a button). The form should not be on the DOM until the button click happens.-->
@@ -44,22 +44,28 @@ from the student array and move them to Moldy Voldy's Army.-->
 <br>
 <!--house sort buttons-->
 <div class="houseButtons-c">
-<button type="button" class="btn btn-outline-secondary" id="allB">ALL</button>
-<button type="button" class="btn btn-outline-danger" id="gryffB">Gryffindor</button>  
-<button type="button" class="btn btn-warning" id="hufflB">Hufflepuff</button> 
-<button type="button" class="btn btn-outline-primary" id="ravenB">Ravenclaw</button>
-<button type="button" class="btn btn-outline-success" id="slythB">Slytherin</button>
+<button type="button" class="btn btn-secondary btn-lg" id="allB">ALL</button>
+<button type="button" class="btn btn-danger btn-lg" id="gryffB">Gryffindor</button>  
+<button type="button" class="btn btn-warning btn-lg" id="hufflB">Hufflepuff</button> 
+<button type="button" class="btn btn-primary btn-lg" id="ravenB">Ravenclaw</button>
+<button type="button" class="btn btn-success btn-lg" id="slythB">Slytherin</button>
 </div>
 <br>
-<br>
-<!--form buttons-->
 <br>
 <br>
 <!--Differentiate the students-->
-<div class="sContainer">
-    <div id="enrolledStudents"></div>
-    <div id="expelledStudents"></div>
+<div id="enrolledStudents"></div>
+
 </div>
+<br>
+<div class="card text-center" style="width: 18rem;" id="expelledCard">
+    <div class="card-body">
+      <h5 class="card-title">MOLDY VOLDY'S ARMY</h5>
+      <img class="hat" src="https://cdnb.artstation.com/p/assets/images/images/036/060/765/large/ondrej-widox-spanhel-untitled-1.jpg?1616616938">
+    </div>
+  </div>
+  <div id="expelledStudents"></div>
+<br>
 <br>
 <br>
     <script src="main.js"></script>
