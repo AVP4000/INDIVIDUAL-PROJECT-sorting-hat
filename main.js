@@ -154,7 +154,7 @@ array.forEach((expelledStudent) => {
 renderToDom('#expelledStudents', expelledStudentsDomString);
    };
 
-// Expel Array  NOT WORKING - CAN DELETE
+// Expel Array -  WORKING/CAN DELETE
 // Here we will be using event bubbling
 // 1. Target the app div if it already hasnt been done: const app = document.querySelector("#app");
 // 2. Add an event listener to capture clicks
