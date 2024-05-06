@@ -7,41 +7,49 @@ const students = [
       id: 1,
       name: "Godric Gryffindor",
       house: "Gryffindor",
+      color: '#9E0501',
     },
     {
       id: 2,
       name: "Helga Hufflepuff",
       house: "Hufflepuff",
+      color: '#F3CF00',
     },
     {
       id: 3,
       name: "Rowena Ravenclaw",
       house: "Ravenclaw",
+      color: '#530a53',
     },
     {
       id: 4,
       name: "Salazar Slytherin",
       house: "Slytherin",
+      color: '#4A9D54',
     },    
     {
       id: 5,
       name: "Severus Snape",
       house: "Slytherin",
+      color: '#4A9D54',
     },    
     {
       id: 6,
       name: "Pomona Sprout",
       house: "Hufflepuff",
+      color: '#F3CF00',
     },
     {
       id: 7,
       name: "Cho Chang",
       house: "Ravenclaw",
+      color: '#530a53',
     },    
     {
       id: 8,
       name: "Harry Potter",
       house: "Gryffindor",
+      color: '#9E0501',
     }, 
     
   ];
@@ -59,7 +67,7 @@ const renderToDom = (divId, htmlToRender) => {
   const cardsOnDom = (array) => {
     let domString = "";
     for(const student of array) {
-      domString += `<div class="card mb-3" style="max-width: 540px;">
+      domString += `<div class="card mb-3" style="max-width: 720px;border-color:${student.color};border-width:10px;>
       <div class="row g-0">
       <div class="col-md-8">
         <div class="card-body">
@@ -81,29 +89,38 @@ const form = document.querySelector('form');
 const enrolledStudents = document.querySelector("#enrolledStudents");
 const expelledStudents = document.querySelector("#expelledStudents");
 
-// House Randomizer for Student Form 
-const randomize = () => {
-const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
-const randomHouse = Math.floor(Math.random() * houses.length);
-return houses[randomHouse];
-};  
-
+ 
 // New Student Form
 const createNewStudent = (e) => {
     e.preventDefault(); // EVERY TIME YOU CREATE A FORM
-    
-    const newStudentObj = {
+
+// House Randomizer for Student Form
+const houses = ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"];
+const randomHouse = Math.floor(Math.random() * houses.length);
+const randomize = houses[randomHouse]; 
+
+// Colors for random house
+const houseColors = {
+    Gryffindor: '#9E0501', 
+    Hufflepuff: '#F3CF00', 
+    Ravenclaw: '#530a53', 
+    Slytherin: '#4A9D54', 
+  };
+
+// NewStudentObject
+const newStudentObj = {
       id: students.length + 1,
       name: document.querySelector("#new-student").value,
-      house: randomize(), 
-    }
+      house: randomize, 
+      color: houseColors[randomize], 
+    };
     
 students.push(newStudentObj);
 cardsOnDom(students);
 
 // form reset
 form.reset();
-}
+};
 
 form.addEventListener('submit', createNewStudent);
 

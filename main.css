@@ -1,13 +1,16 @@
 body {
-    background-image: url("Assets/Background.jpg");
-    background-repeat: no-repeat;
+
+    background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3N2azRzd3h2MnRvZjdsdzFocHVzaG85Y3YwMHRhMHBsMDRmMnl2ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYzA5czu7GV1Xt6/giphy.gif');
     background-size: cover;
-    background-attachment: fixed;
+    height: 100vh;
+    padding:0;
+    margin:0;
 }
 
 
 #initialCard {
-    width: 80%;
+    width: 70%;
+    text-align: center;
     margin: 50px auto 20px auto;
     padding: 20px 40px;
     background-color: slategrey;
@@ -41,11 +44,21 @@ h3 {
     text-shadow: 1px 1px 2px black;
 }
 
+h5 {
+    text-align: center;
+    display: flex;
+}
+
+p {
+    display: flex;
+    text-align: center;
+}
+
 .houseButtons-c {
 display: flex;
-justify-content: center;
+justify-content: space-evenly;
 margin-top: 60px;
-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+
 }
 
 #allb,
@@ -56,6 +69,7 @@ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida San
   margin-right: 10px;
   margin-left: 10px;
   color: black;
+  font-weight: 900;
 }
 
 .hat {
